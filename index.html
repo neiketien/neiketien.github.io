@@ -93,6 +93,10 @@
               <h6>Hi, my name is</h6>
               <h1>Michael <span>Neiketien</span>.</h1>
               <p class="mb-0">I am a web and software developer with experience building websites and applications using <span class="typed" data-typed-items="JavaScript, Flutter, React, Next.JS, React Native, Node.js"></span>. I focus on creating clean, efficient and user-centered digital experiences.</p>
+              <div class="hero-buttons">
+                  <a href="#" class="hero-btn">Download CV</a>
+                  <a href="#contact" class="hero-btn hero-btn-secondary">Let's Work Together</a>
+              </div>
               <div class="page-social-links">
               <a href="#"><i class="bi bi-facebook"></i></a>
               <a href="#"><i class="bi bi-twitter-x"></i></a>
@@ -589,6 +593,40 @@
         </p>
                   </div>
                 </div>
+                
+                <!-- ... after the Bachelor's degree education-item ... -->
+
+<!-- START: New Certifications Block -->
+<div class="education-item" data-aos="slide-up" data-aos-delay="500">
+  <div class="timeline-marker"></div>
+  <div class="education-content">
+    <div class="certifications-card">
+      <div class="cert-header">
+        <span class="year">2021 - 2023</span>
+        <h4>Certificates</h4>
+      </div>
+      <h3>Professional Certifications</h3>
+      <ul class="cert-list">
+        <li class="cert-item">
+          <span>Advanced UX Research</span>
+          <span class="cert-year">2023</span>
+        </li>
+        <li class="cert-item">
+          <span>Design Leadership</span>
+          <span class="cert-year">2022</span>
+        </li>
+        <li class="cert-item">
+          <span>Digital Strategy</span>
+          <span class="cert-year">2021</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- END: New Certifications Block -->
+
+</div> <!-- This is the closing tag for .education-timeline -->
+<!-- ... -->
 
                 <!--<div class="education-item" data-aos="slide-up" data-aos-delay="500">
                   <div class="timeline-marker"></div>
@@ -650,6 +688,84 @@
       </div>
     </section>
     
+    <!-- ======= Testimonials Section =======
+<section id="testimonials" class="testimonials section">
+
+  <!-- Section Title 
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Testimonials</h2>
+    <p>What my clients say about our collaboration</p>
+  </div><!-- End Section Title
+
+  <div class="testimonial-animation-container">
+    
+    <!-- Testimonial Card 1 (Blurred) 
+    <div class="testimonial-card card-1">
+      <div class="card-accent"></div>
+      <div class="stars">
+        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+      </div>
+      <p class="quote">Working with Michael was a game-changer. His attention to detail and creative solutions brought our vision to life beyond our expectations.</p>
+      <div class="author">
+        <img src="https://i.pravatar.cc/150?img=1" alt="Jane Smith">
+        <div class="author-info">
+          <h3>Jane Smith</h3>
+          <span>CEO, Innovate Inc.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonial Card 2 (Focused)
+    <div class="testimonial-card card-2">
+      <div class="card-accent"></div>
+      <div class="stars">
+        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+      </div>
+      <p class="quote">The entire process was seamless. From initial concept to final deployment, the communication and execution were flawless.</p>
+      <div class="author">
+        <img src="https://i.pravatar.cc/150?img=2" alt="John Doe">
+        <div class="author-info">
+          <h3>John Doe</h3>
+          <span>Marketing Director</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonial Card 3 (Blurred)
+    <div class="testimonial-card card-3">
+      <div class="card-accent"></div>
+      <div class="stars">
+        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+      </div>
+      <p class="quote">An incredibly talented developer. The final product was not only beautiful but also highly performant and user-friendly.</p>
+      <div class="author">
+        <img src="https://i.pravatar.cc/150?img=3" alt="Emily White">
+        <div class="author-info">
+          <h3>Emily White</h3>
+          <span>Project Manager</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonial Card 4 (Blurred)
+    <div class="testimonial-card card-4">
+      <div class="card-accent"></div>
+      <div class="stars">
+        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+      </div>
+      <p class="quote">I'm thrilled with the results. The app is fast, intuitive, and has received amazing feedback from our users.</p>
+      <div class="author">
+        <img src="https://i.pravatar.cc/150?img=4" alt="David Green">
+        <div class="author-info">
+          <h3>David Green</h3>
+          <span>Startup Founder</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section><!-- End Testimonials Section -->
+    
    
 <section id="contact" class="contact section">
   <div class="container section-title" data-aos="fade-up">
@@ -657,11 +773,11 @@
     <p>To discuss a project, you can reach out to me!</p>
   </div>
   <div class="container" data-aos="fade-up" data-aos-delay="100">
-    <div class="row justify-content-center">
-      <div class="col-lg-7">
+    <div class="row justify-content-center justify-content-lg-start">
+      <div class="col-lg-8 col-xl-7">
         <div class="contact-form-new">
           <form class="form" id="contact-form" novalidate>
-            <input type="hidden" name="access_key" value="03367126-2348-43bb-8ba1-83281372ff01">
+            <input type="hidden" name="access_key" value="b3b5a954-eab8-442d-9596-979384027138">
             <input type="hidden" name="subject" value="New Contact Form Submission from Portfolio">
             <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
             <div class="input_container">
