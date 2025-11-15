@@ -130,10 +130,10 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('load', () => {
       setTimeout(() => {
         preloader.classList.add('loaded');
-      }, 1000);
+      }, 3000); // Let the animation play for 3 seconds
       setTimeout(() => {
         preloader.remove();
-      }, 1500);
+      }, 3500); // Remove it after the 0.5s fade-out animation
     });
   }
   
