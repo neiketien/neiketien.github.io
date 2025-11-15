@@ -31,7 +31,8 @@
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: rgba(255, 255, 255, 0.5);
+  /* Accessibility Fix: Increased opacity from 0.5 to 0.75 for better contrast */
+  --nav-color: rgba(255, 255, 255, 0.75);
   /* The default color of the main navmenu links */
   --nav-hover-color: #ffffff;
   /* Applied to main navmenu links when they are hovered over or active */
@@ -39,7 +40,7 @@
   /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #1a1a1a;
   /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: rgba(255, 255, 255, 0.5);
+  --nav-dropdown-color: rgba(255, 255, 255, 0.7);
   /* Used for navigation links of the dropdown items in the navigation menu. */
   --nav-dropdown-hover-color: #ffffff;
   /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
@@ -51,11 +52,11 @@
   --default-color: #333333;
   --heading-color: #000000;
   --surface-color: #f2f2f2;
-  --nav-color: rgba(0, 0, 0, 0.5);
+  --nav-color: rgba(0, 0, 0, 0.7);
   --nav-hover-color: #000000;
   --nav-mobile-background-color: #ffffff;
   --nav-dropdown-background-color: #ffffff;
-  --nav-dropdown-color: rgba(0, 0, 0, 0.5);
+  --nav-dropdown-color: rgba(0, 0, 0, 0.7);
   --nav-dropdown-hover-color: #000000;
 }
 
@@ -82,13 +83,13 @@
 --------------------------------------------------------------*/
 body {
   color: var(--default-color);
-  background-color: var(--background-color);
+  background-color: var(--background-color) !important;
   font-family: var(--default-font);
 }
 
 a {
   color: var(--accent-color);
-  text-decoration: none;
+  text-decoration: none !important;
   transition: 0.3s;
 }
 
@@ -105,58 +106,6 @@ h5,
 h6 {
   color: var(--heading-color);
   font-family: var(--heading-font);
-}
-
-/* PHP Email Form Messages
-------------------------------*/
-.php-email-form .error-message {
-  display: none;
-  background: #df1529;
-  color: #ffffff;
-  text-align: left;
-  padding: 15px;
-  margin-bottom: 24px;
-  font-weight: 600;
-}
-
-.php-email-form .sent-message {
-  display: none;
-  color: #ffffff;
-  background: #059652;
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 24px;
-  font-weight: 600;
-}
-
-.php-email-form .loading {
-  display: none;
-  background: var(--surface-color);
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 24px;
-}
-
-.php-email-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid var(--accent-color);
-  border-top-color: var(--surface-color);
-  animation: php-email-form-loading 1s linear infinite;
-}
-
-@keyframes php-email-form-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
 }
 
 /*--------------------------------------------------------------
@@ -184,7 +133,7 @@ h6 {
   min-height: 24px; /* Approximates the height of the text */
   display: inline-block;
   text-align: left;
-  margin-left: 15px;
+  margin-left: 15px;  
 }
 
 /* Style the blinking cursor from Typed.js */
@@ -451,7 +400,7 @@ h6 {
 # Global Footer
 --------------------------------------------------------------*/
 .footer {
-  --background-color: color-mix(in srgb, var(--default-color), transparent 95%);
+  --background-color: var(--surface-color);
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
   color: var(--default-color);
   background-color: var(--background-color);
@@ -502,105 +451,119 @@ h6 {
 --------------------------------------------------------------*/
 #preloader {
   display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   inset: 0;
   width: 100%;
   height: 100vh;
   z-index: 99999;
+  background: #1a1a1a;
+  transition: opacity 0.5s ease-out, visibility 0s 0.5s;
 }
 
-#preloader:before,
-#preloader:after {
-  content: "";
-  background-color: #000000;
+#preloader.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#preloader .absolute {
   position: absolute;
-  inset: 0;
-  width: 50%;
-  height: 100%;
-  transition: all 0.3s ease 0s;
-  z-index: -1;
 }
 
-#preloader:after {
-  left: auto;
-  right: 0;
-}
-
-#preloader .line {
+#preloader .loader-container {
   position: relative;
-  overflow: hidden;
-  margin: auto;
-  width: 1px;
-  height: 280px;
-  transition: all 0.8s ease 0s;
+  font-size: 8vw; /* Base size for responsiveness */
+  padding: 0 10px;
 }
 
-#preloader .line:before {
-  content: "";
-  position: absolute;
-  background-color: #ffffff;
-  left: 0;
-  top: 50%;
-  width: 1px;
-  height: 0%;
-  transform: translateY(-50%);
-  animation: lineincrease 1000ms ease-in-out 0s forwards;
+@media (min-width: 480px) {
+  #preloader .loader-container {
+    font-size: 6vw;
+  }
 }
 
-#preloader .line:after {
-  content: "";
+@media (min-width: 768px) {
+  #preloader .loader-container {
+    font-size: 4vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  #preloader .loader-container {
+    font-size: 3vw;
+  }
+}
+
+#preloader .loader {
+  display: flex;
+  margin: 0.25em 0;
+  justify-content: center;
+}
+
+#preloader .loader.outline {
   position: absolute;
-  background-color: color-mix(in srgb, var(--default-color), transparent 95%);
-  left: 0;
   top: 0;
-  width: 1px;
-  height: 100%;
-  transform: translateY(-100%);
-  animation: linemove 1200ms linear 0s infinite;
-  animation-delay: 2000ms;
+  left: 0;
+  right: 0; /* Center the outline layer */
+  margin: 0.25em auto; /* Center the outline layer */
+  opacity: 0.3;
 }
 
-#preloader.loaded .line {
-  opacity: 0;
-  height: 100% !important;
+#preloader .loader.fill {
+  position: relative;
+  /*animation: waterFlow 8s ease-in-out infinite;*/
 }
 
-#preloader.loaded .line:after {
-  opacity: 0;
+#preloader .w-2 {
+  width: 0.1em;
 }
 
-#preloader.loaded:before,
-#preloader.loaded:after {
-  animation: preloaderfinish 300ms ease-in-out 500ms forwards;
+#preloader .inline-block {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
 }
 
-@keyframes lineincrease {
+#preloader .dash {
+  animation: dashArray 8s ease-in-out infinite,
+    dashOffset 8s linear infinite;
+}
+
+@keyframes waterFlow {
+  0%,
+  100% {
+    clip-path: polygon(0% 70%, 15% 68%, 32% 72%,
+        54% 78%, 70% 80%, 84% 75%, 100% 70%, 100% 100%, 0% 100%);
+  }
+
+  50% {
+    clip-path: polygon(0% 25%, 16% 30%, 34% 32%,
+        51% 28%, 67% 22%, 84% 20%, 100% 25%, 100% 100%, 0% 100%);
+  }
+}
+
+@keyframes dashArray {
   0% {
-    height: 0%;
+    stroke-dasharray: 0 1 359 0;
+  }
+
+  50% {
+    stroke-dasharray: 0 359 1 0;
   }
 
   100% {
-    height: 100%;
+    stroke-dasharray: 359 1 0 0;
   }
 }
 
-@keyframes linemove {
+@keyframes dashOffset {
   0% {
-    transform: translateY(200%);
+    stroke-dashoffset: 365;
   }
 
   100% {
-    transform: translateY(-100%);
-  }
-}
-
-@keyframes preloaderfinish {
-  0% {
-    width: 5 0%;
-  }
-
-  100% {
-    width: 0%;
+    stroke-dashoffset: 5;
   }
 }
 
@@ -992,146 +955,171 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Testimonials Section
+# Testimonials Section (New Card Design + Marquee)
 --------------------------------------------------------------*/
 #testimonials {
   padding-bottom: 80px;
 }
 
-.testimonial-animation-container {
+.testimonials-marquee {
   position: relative;
-  width: 100%;
-  height: 450px; /* The "stage" for our animation */
-  overflow: hidden; /* Crucial for hiding cards before they enter */
-  margin-top: -30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: hidden;
+  /* Fades out the edges for a cleaner look */
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
 
-.testimonial-card {
-  position: absolute;
-  width: 90%;
-  max-width: 380px;
-  padding: 30px 25px 25px 25px;
+.marquee-track {
+  display: flex;
+  gap: 20px;
+  animation: scroll 25s linear infinite;
+  min-width: fit-content; /* Important for the animation calculation */
+}
+
+/* Second track scrolls in the opposite direction */
+.marquee-track.track-2 {
+  animation-direction: reverse;
+  animation-duration: 30s; /* Slightly different speed */
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); } /* Scroll by half the width */
+}
+
+.testimonial-card-v2 {
+  position: relative;
+  width: 400px;
+  flex-shrink: 0;
+  padding: 35px 30px 30px 30px;
   background-color: var(--surface-color);
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.07);
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 92%);
-  opacity: 0; /* Start invisible */
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
 }
 
-.testimonial-card .card-accent {
+.testimonial-card-v2 .card-accent {
   position: absolute;
   top: 0;
-  left: 15px;
-  right: 15px;
-  height: 6px;
+  left: 20px;
+  right: 20px;
+  height: 5px;
   background: var(--accent-color);
   border-radius: 0 0 10px 10px;
 }
 
-.testimonial-card .stars {
+.testimonial-card-v2 .stars {
   margin-top: 10px;
   margin-bottom: 20px;
   color: #ffc107;
   font-size: 18px;
 }
 
-.testimonial-card .quote {
-  font-size: 16px;
+.testimonial-card-v2 .quote {
+  font-size: 17px;
   line-height: 1.6;
+  font-family: var(--heading-font);
   font-style: italic;
-  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
   margin-bottom: 25px;
 }
 
-.testimonial-card .author {
+.testimonial-card-v2 .author {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-.testimonial-card .author img {
+.testimonial-card-v2 .author img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 2px solid var(--accent-color);
+  border: 2px solid color-mix(in srgb, var(--accent-color), transparent 50%);
+  filter: blur(3px); /* Blur only the profile picture */
 }
 
-.testimonial-card .author h3 {
+.testimonial-card-v2 .author h3 {
   margin: 0;
   font-size: 18px;
   font-weight: 600;
   color: var(--heading-color);
 }
 
-.testimonial-card .author span {
+.testimonial-card-v2 .author span {
   font-size: 14px;
   color: color-mix(in srgb, var(--default-color), transparent 40%);
 }
 
-.testimonial-card.blurred {
-  filter: blur(2px);
-  transform: scale(0.9);
-  z-index: 1;
+/*--------------------------------------------------------------
+# Testimonial Location Pin & Flag
+--------------------------------------------------------------*/
+/* Flex container for the location info */
+.testimonial-card-v2 .author-info span {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between pin, flag, and text */
 }
 
-/* --- Animation Keyframes --- */
-
-/* Animation 1 (Left to Right, Top) */
-.testimonial-card.card-1 { animation-name: float-1; animation-duration: 22s; }
-@keyframes float-1 {
-  0%   { left: -100%; top: 5%; opacity: 0; transform: rotate(-5deg); }
-  15%  { left: 10%; top: 5%; opacity: 1; transform: rotate(0deg); }
-  45%  { left: 20%; top: 10%; transform: rotate(3deg); }
-  75%  { left: 15%; top: 0%; transform: rotate(-2deg); }
-  90%  { left: 120%; top: 10%; opacity: 0; transform: rotate(5deg); }
-  100% { left: -100%; top: 5%; opacity: 0; transform: rotate(-5deg); }
+/* Country flag styling */
+.country-flag {
+  width: 20px;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-/* Animation 2 (Right to Left, Center) */
-.testimonial-card.card-2 { animation-name: float-2; animation-duration: 20s; animation-delay: 4s; }
-@keyframes float-2 {
-  0%   { right: -100%; top: 35%; opacity: 0; transform: rotate(5deg); }
-  15%  { right: 10%; top: 40%; opacity: 1; transform: rotate(0deg); }
-  50%  { right: 15%; top: 30%; transform: rotate(-4deg); }
-  75%  { right: 10%; top: 45%; transform: rotate(2deg); }
-  90%  { right: 120%; top: 35%; opacity: 0; transform: rotate(-5deg); }
-  100% { right: -100%; top: 35%; opacity: 0; transform: rotate(5deg); }
+/* Scaled-down and re-themed location pin animation */
+.testimonial-location-pin {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
 }
 
-/* Animation 3 (Left to Right, Bottom) */
-.testimonial-card.card-3 { animation-name: float-3; animation-duration: 25s; animation-delay: 8s; }
-@keyframes float-3 {
-  0%   { left: -100%; top: 65%; opacity: 0; transform: rotate(-3deg); }
-  15%  { left: 5%; top: 60%; opacity: 1; transform: rotate(0deg); }
-  50%  { left: 15%; top: 70%; transform: rotate(5deg); }
-  75%  { left: 10%; top: 55%; transform: rotate(-1deg); }
-  90%  { left: 120%; top: 65%; opacity: 0; transform: rotate(3deg); }
-  100% { left: -100%; top: 65%; opacity: 0; transform: rotate(-3deg); }
+.testimonial-location-pin:before,
+.testimonial-location-pin:after {
+  position: absolute;
+  content: "";
 }
 
-/* Animation 4 (Right to Left, Top) */
-.testimonial-card.card-4 { animation-name: float-4; animation-duration: 23s; animation-delay: 12s; }
-@keyframes float-4 {
-  0%   { right: -100%; top: 10%; opacity: 0; transform: rotate(2deg); }
-  15%  { right: 5%; top: 15%; opacity: 1; transform: rotate(0deg); }
-  50%  { right: 15%; top: 5%; transform: rotate(-3deg); }
-  75%  { right: 10%; top: 20%; transform: rotate(4deg); }
-  90%  { right: 120%; top: 10%; opacity: 0; transform: rotate(-2deg); }
-  100% { right: -100%; top: 10%; opacity: 0; transform: rotate(2deg); }
+/* This is the pin shape */
+.testimonial-location-pin:before {
+  width: 8px;
+  height: 8px;
+  border-radius: 100% 100% 100% 0;
+  box-shadow: 0px 0px 0px 1.5px var(--accent-color); /* Themed color */
+  animation: testimonial-pin-hop 1s linear infinite;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-46deg);
+  margin-top: 8px;
 }
 
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-  .testimonial-animation-container {
-    height: 600px;
+/* This is the shadow below the pin */
+.testimonial-location-pin:after {
+  width: 12px;
+  height: 8px;
+  border-radius: 100%;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 85%); /* Themed, subtle shadow */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 6px;
+}
+
+@keyframes testimonial-pin-hop {
+  0% {
+    top: 0;
   }
-  .testimonial-card {
-    max-width: 300px; /* Smaller cards on mobile */
+  50% {
+    top: -3px; /* Smaller hop for a smaller pin */
+  }
+  100% {
+    top: 0;
   }
 }
-
 /*--------------------------------------------------------------
 # New Contact Form & Alert Styles
 --------------------------------------------------------------*/
