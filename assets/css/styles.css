@@ -866,13 +866,13 @@ section,
 }
 
 .hero-btn { /* Primary Button Style */
-  background: #1f825b;
+  background: var(--accent-color);
   color: var(--contrast-color);
-  border: 2px solid #1f825b;
+  border: 2px solid var(--accent-color);
 }
 .hero-btn:hover {
-  background: #1a6e4d;
-  border-color: #1a6e4d;
+  background: color-mix(in srgb, var(--accent-color), black 10%);
+  border-color: color-mix(in srgb, var(--accent-color), black 10%);
   transform: translateY(-3px);
   color: var(--contrast-color);
 }
