@@ -130,6 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('load', () => {
       setTimeout(() => {
         preloader.classList.add('loaded');
+        document.body.style.visibility = 'visible';
       }, 3000); // Let the animation play for 3 seconds
       setTimeout(() => {
         preloader.remove();
