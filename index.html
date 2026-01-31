@@ -24,79 +24,157 @@
 </head>
 
 <body class="starter-page-page">
-  <header id="header" class="header d-flex align-items-center sticky-top">
-  <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
-    <div class="d-flex align-items-center">
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+      
+      <!-- Logo with Terminal Prompt -->
       <a href="index.html" class="logo d-flex align-items-center">
-        <span id="animated-logo-text"></span>
+        <span class="terminal-prompt">&gt;</span>
+        <span class="logo-wrapper">
+            <span id="animated-logo-text" class="clean-logo"></span>
+        </span>
       </a>
-      <nav id="navmenu" class="navmenu d-lg-none">
+  
+      <!-- Centered Navigation -->
+      <nav id="desktop-navmenu" class="desktop-navmenu d-none d-lg-block centered-nav">
         <ul>
-          <li><a href="#home">Home<br></a></li>
-          <li><a href="#my-work">My Work</a></li>
-          <li><a href="#my-skills">My Skills</a></li>
-          <li><a href="#my-resume">My Experience</a></li>
-          <li><a href="#contact">Contact Me</a></li>
+          <li><a href="#home" class="active">{Home}</a></li>
+          <li><a href="#my-expertise">{My Expertise}</a></li>
+          <li><a href="#my-work">{My Work}</a></li>
+          <li><a href="#contact">{Contact Me}</a></li>
         </ul>
       </nav>
-    </div>
+  
+      <!-- Right Controls: Hamburger Only (Toggle Removed) -->
+      <div class="header-controls d-flex align-items-center">
+        <nav id="navmenu" class="navmenu d-lg-none">
+          <ul>
+            <li><a href="#home">{Home}</a></li>
+            <li><a href="#my-expertise">{My Expertise}</a></li>
+            <li><a href="#my-work">{My Work}</a></li>
+            <li><a href="#contact">{Contact Me}</a></li>
+          </ul>
+        </nav>
 
-    <nav id="desktop-navmenu" class="desktop-navmenu d-none d-lg-block">
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#my-work">My Work</a></li>
-        <li><a href="#my-skills">My Skills</a></li>
-        <li><a href="#my-resume">My Experience</a></li>
-        <li><a href="#contact">Contact Me</a></li>
-      </ul>
-    </nav>
-
-    <div class="header-controls d-flex align-items-center">
-      <div class="toggle-switch">
-        <label class="switch-label">
-          <input type="checkbox" class="checkbox" id="toggle">
-          <span class="slider"></span>
+        <label class="hamburger mobile-nav-toggle d-lg-none">
+          <input type="checkbox" />
+          <svg viewBox="0 0 32 32">
+            <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+            <path class="line" d="M7 16 27 16"></path>
+          </svg>
         </label>
       </div>
-      <!-- Hamburger Menu (Visible on Mobile/Tablet) -->
-      <label class="hamburger mobile-nav-toggle d-lg-none">
-        <input type="checkbox" />
-        <svg viewBox="0 0 32 32">
-          <path
-            class="line line-top-bottom"
-            d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
-          ></path>
-          <path class="line" d="M7 16 27 16"></path>
-        </svg>
-      </label>
     </div>
-  </div>
-</header>
-  
+  </header>
 
   <main class="main">
-    <div class="page-title" id="home" data-aos="fade">
-      <div class="heading">
-        <div class="container">
-          <div class="row d-flex justify-content-center text-center">
-            <div class="col-lg-8">
-              <h6>Hi, my name is</h6>
-              <h1>Michael <span>Neiketien</span>.</h1>
-              <p class="mb-0">I am a web and software developer with experience building websites and applications using <span class="typed" data-typed-items="JavaScript, Flutter, React, Next.JS, React Native, Node.js"></span>. I focus on creating clean, efficient and user-centered digital experiences.</p>
-              <div class="hero-buttons">
-                  <a href="#" class="hero-btn">Download CV</a>
-                  <a href="#contact" class="hero-btn hero-btn-secondary">Let’s Work Together</a>
+    <section id="home" class="hero-cinematic">
+      <!--<div class="ambient-glow"></div>-->
+      <div class="container-fluid h-100">
+        <div class="row h-100 align-items-center position-relative">
+          <div class="col-lg-5 offset-lg-1 hero-text-content">
+            <div class="identity-block">
+              <div class="status-badge">
+                  <span class="pulse-dot"></span>
+                  <span>Available for new projects</span>
               </div>
-              <div class="page-social-links">
-                <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                <a href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
+              <h1 class="hero-name">Michael<br><span>Pepple</span></h1>
+              <div class="role-wrapper">
+                <!--<div class="vertical-line"></div>-->
+                <div class="role-text">I am a web and software developer with experience building websites and applications using <span class="typed" data-typed-items="JavaScript, Flutter, React, Next.JS, React Native, Node.js"></span>. I focus on creating clean, efficient and user-centered digital experiences.
+                </div>
               </div>
             </div>
+            
+            <div class="hero-cta mt-5">
+               <a href="#contact" class="btn-outlined">Let’s Talk</a>
+               <a href="#" class="btn-outlined">Download CV</a>
+            </div>
+            <div class="hero-socials">
+  <!-- Facebook -->
+  <a href="#" class="social-link facebook" aria-label="Facebook">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  
+  <!-- X (Twitter) -->
+  <a href="#" class="social-link twitter" aria-label="Twitter">
+    <i class="fa-brands fa-x-twitter"></i>
+  </a>
+  
+  <!-- LinkedIn -->
+  <a href="#" class="social-link linkedin" aria-label="LinkedIn">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+  
+  <!-- GitHub -->
+  <a href="#" class="social-link github" aria-label="GitHub">
+    <i class="fab fa-github"></i>
+  </a>
+</div>
           </div>
         </div>
-      </div>      
+      </div>
+    </section>
+
+    <section id="my-expertise" class="my-work section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>My Expertise</h2>
+        <p>The technologies powering my development</p>
+      </div>
+      <div class="container" data-aos="fade-up">
+        <div class="row row-cols-3 row-cols-md-4 row-cols-lg-5 g-5 justify-content-center skills-grid">
+          <div class="col text-center skill-item">
+            <i class="fab fa-html5"></i>
+            <p>html-5</p>
+          </div>
+          <div class="col text-center skill-item">
+            <i class="fab fa-css3-alt"></i>
+            <p>css3</p>
+          </div>
+          <div class="col text-center skill-item">
+            <i class="fab fa-sass"></i>
+            <p>sass</p>
+          </div>
+          <div class="col text-center skill-item">
+            <i class="fab fa-js"></i>
+            <p>JavaScript</p>
+          </div>
+          <div class="col text-center skill-item">
+            <i class="fab fa-react"></i>
+            <p>reactjs</p>
+          </div>
+          <div class="col text-center skill-item">
+            <i class="fab fa-node-js"></i>
+            <p>nodejs</p>
+          </div>
+          <div class="col text-center skill-item">
+            <i class="fa-brands fa-flutter"></i>
+            <p>flutter</p>
+          </div>
+          <div class="col text-center skill-item">
+            <i class="fab fa-npm"></i>
+            <p>npm</p>
+          </div>
+          <div class="col text-center skill-item">
+            <i class="fas fa-database"></i>
+            <p>sql-database</p>
+          </div>
+          <div class="col text-center skill-item">
+            <i class="fa-brands fa-git"></i>
+            <p>git</p>
+          </div>
+          <div class="col text-center skill-item">
+            <i class="fas fa-fire"></i>
+            <p>firebase</p>
+          </div>
+          <div class="col text-center skill-item">
+            <i class="fa-brands fa-php"></i>
+            <p>php</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
     
     <section id="my-work" class="my-work section">
       <div class="container section-title" data-aos="fade-up">
@@ -106,11 +184,11 @@
       <div class="container" data-aos="fade-up">
         <div class="project-item featured-project" data-aos="fade-up">
           <div class="project-image">
-            <img src="assets/img/work/midwest-light-power-2.png" class="img-fluid" alt="Midwest Light and Power" width="700" height="450" loading="lazy">
+            <img src="assets/img/work/midwest-light-power.png" class="img-fluid" alt="Midwest Light and Power" width="700" height="450" loading="lazy">
           </div>
           <div class="project-content">
             <p class="project-overline">Featured Project</p>
-            <h3 class="project-title"><a href="https://neiketien.github.io/midwest-light-and-power">Midwest Light and Power</a></h3>
+            <h3 class="project-title">Midwest Light and Power</h3>
             <div class="project-description">
               <p>A modern website for a regional utility company, built to simplify customer interaction and improve transparency.</p>
             </div>
@@ -122,30 +200,30 @@
             </ul>
             <div class="project-links">
               <a href="" aria-label="GitHub Link" class="disabled-link" aria-disabled="true" tabindex="-1"><i class="bi bi-github"></i></a>
-              <a href="https://neiketien.github.io/midwest/" aria-label="External Link"><i class="bi bi-box-arrow-up-right"></i></a>
+              <a href="https://neiketien.github.io/construction" aria-label="External Link"><i class="bi bi-box-arrow-up-right"></i></a>
             </div>
           </div>
         </div>
         
         <div class="project-item featured-project project-left" data-aos="fade-up">
           <div class="project-image">
-            <!--<img src="assets/img/work/project-beta.png" class="img-fluid" alt="Southern Bee" width="700" height="450" loading="lazy">-->
+            <img src="assets/img/work/ssbee.png" class="img-fluid" alt="Southern Bee" width="700" height="450" loading="lazy">
           </div>
           <div class="project-content">
             <p class="project-overline">Featured Project</p>
-            <h3 class="project-title"><a href="https://neiketien.github.io/southern-bee-project">Southern Bee</a></h3>
+            <h3 class="project-title">Southern Bee</h3>
             <div class="project-description">
               <p>A political and economic news website on the Global South, designed for clarity, trust and engagement with readers.</p>
             </div>
             <ul class="project-tech-list">
               <li>HTML5</li>
-              <li>CSS3</li>
-              <li>Vanilla JS</li>
+              <li>Tailwind CSS</li>
+              <li>JavaScript</li>
               <li>PHP</li>
             </ul>
             <div class="project-links">
               <a href="" aria-label="GitHub Link" class="disabled-link" aria-disabled="true" tabindex="-1"><i class="bi bi-github"></i></a>
-              <a href="https://southern-bee.com" aria-label="External Link"><i class="bi bi-box-arrow-up-right"></i></a>
+              <a href="https://neiketien.github.io/construction " aria-label="External Link"><i class="bi bi-box-arrow-up-right"></i></a>
             </div>
           </div>
         </div>
@@ -219,581 +297,57 @@
         </div>
         <!-- Open Source Projects would be added here. -->
       </div>
-    </section></div>
-
-    <!-- Starter Section Section-->
-    <section id="starter-section" class="starter-section section">
-      <div id="my-skills" class="container section-title" data-aos="fade-up">
-        <h2>My Skills</h2>
-        <p>I am passionate about building seamless applications by exploring and mastering diverse technologies</p>
-      </div>
-      <div class="container" data-aos="fade-up">
-        <div class="row row-cols-3 row-cols-md-4 row-cols-lg-5 g-5 justify-content-center skills-grid">
-          <div class="col text-center skill-item">
-            <i class="fab fa-html5"></i>
-            <p>html-5</p>
-          </div>
-          <div class="col text-center skill-item">
-            <i class="fab fa-css3-alt"></i>
-            <p>css3</p>
-          </div>
-          <div class="col text-center skill-item">
-            <i class="fab fa-sass"></i>
-            <p>sass</p>
-          </div>
-          <div class="col text-center skill-item">
-            <i class="fab fa-js"></i>
-            <p>JavaScript</p>
-          </div>
-          <div class="col text-center skill-item">
-            <i class="fab fa-react"></i>
-            <p>reactjs</p>
-          </div>
-          <div class="col text-center skill-item">
-            <i class="fab fa-node-js"></i>
-            <p>nodejs</p>
-          </div>
-          <div class="col text-center skill-item">
-            <i class="fa-brands fa-flutter"></i>
-            <p>flutter</p>
-          </div>
-          <div class="col text-center skill-item">
-            <i class="fab fa-npm"></i>
-            <p>npm</p>
-          </div>
-          <div class="col text-center skill-item">
-            <i class="fas fa-database"></i>
-            <p>sql-database</p>
-          </div>
-          <div class="col text-center skill-item">
-            <i class="fa-brands fa-git"></i>
-            <p>git</p>
-          </div>
-          <div class="col text-center skill-item">
-            <i class="fas fa-fire"></i>
-            <p>firebase</p>
-          </div>
-          <div class="col text-center skill-item">
-            <i class="fa-brands fa-php"></i>
-            <p>php</p>
-          </div>
-
-        </div>
-        
-        <div class="row g-4 justify-content-center skill-card-grid mt-5">
-
-          <div class="col-lg-6" data-aos="flip-left" data-aos-delay="200">
-            <div class="skill-card">
-              <div class="skill-header">
-                <i class="bi bi-code-slash"></i>
-                <h3>Frontend &amp; Web</h3>
-              </div>
-              <div class="skills-animation">
-                <div class="skill-items">
-                  <div class="skill-info">
-                    <span class="skill-name">JavaScript</span>
-                    <span class="skill-percentage">90%</span>
-                  </div>
-                  <div class="skill-bar progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="JavaScript skill level: 90%"></div>
-                  </div>
-                </div>
-                
-                <div class="skill-items">
-                  <div class="skill-info">
-                    <span class="skill-name">React</span>
-                    <span class="skill-percentage">88%</span>
-                  </div>
-                  <div class="skill-bar progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" aria-label="React skill level: 88%"></div>
-                  </div>
-                </div>
-
-                <div class="skill-items">
-                  <div class="skill-info">
-                    <span class="skill-name">NextJS</span>
-                    <span class="skill-percentage">86%</span>
-                  </div>
-                  <div class="skill-bar progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100" aria-label="NextJS skill level: 86%"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-lg-6" data-aos="flip-left" data-aos-delay="300">
-            <div class="skill-card">
-              <div class="skill-header">
-                <i class="bi bi-server"></i>
-                <h3>Backend &amp; Databases</h3>
-              </div>
-              <div class="skills-animation">
-                <div class="skill-items">
-                  <div class="skill-info">
-                    <span class="skill-name">PHP</span>
-                    <span class="skill-percentage">95%</span>
-                  </div>
-                  <div class="skill-bar progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="PHP Skill level: 95%"></div>
-                  </div>
-                </div>
-                
-                <div class="skill-items">
-                  <div class="skill-info">
-                    <span class="skill-name">MySQL</span>
-                    <span class="skill-percentage">92%</span>
-                  </div>
-                  <div class="skill-bar progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" aria-label="MySQL Skill level: 92%"></div>
-                  </div>
-                </div>
-
-                <div class="skill-items">
-                  <div class="skill-info">
-                    <span class="skill-name">NodeJS</span>
-                    <span class="skill-percentage">88%</span>
-                  </div>
-                  <div class="skill-bar progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" aria-label="NodeJS Skill level: 88%"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-lg-6" data-aos="flip-left" data-aos-delay="400">
-            <div class="skill-card">
-              <div class="skill-header">
-                <i class="bi bi-phone"></i>
-                <h3>Mobile &amp; Cross-Platform</h3>
-              </div>
-              <div class="skills-animation">
-                <div class="skill-items">
-                  <div class="skill-info">
-                    <span class="skill-name">Flutter</span>
-                    <span class="skill-percentage">98%</span>
-                  </div>
-                  <div class="skill-bar progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100" aria-label="Flutter skill level: 98%"></div>
-                  </div>
-                </div>
-
-                <div class="skill-items">
-                  <div class="skill-info">
-                    <span class="skill-name">Firebase</span>
-                    <span class="skill-percentage">96%</span>
-                  </div>
-                  <div class="skill-bar progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="96" aria-valuemin="0" aria-valuemax="100" aria-label="Firebase skill level: 96%"></div>
-                  </div>
-                </div>
-
-                <div class="skill-items">
-                  <div class="skill-info">
-                    <span class="skill-name">React Native</span>
-                    <span class="skill-percentage">82%</span>
-                  </div>
-                  <div class="skill-bar progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100" aria-label="React Native skill level: 82%"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-lg-6" data-aos="flip-left" data-aos-delay="500">
-            <div class="skill-card">
-              <div class="skill-header">
-                <i class="bi bi-collection"></i>
-                <h3>Core &amp; Tooling</h3>
-              </div>
-              <div class="skills-animation">
-                <div class="skill-items">
-                  <div class="skill-info">
-                    <span class="skill-name">HTML5/CSS3</span>
-                    <span class="skill-percentage">98%</span>
-                  </div>
-                  <div class="skill-bar progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100" aria-label="HTML5/CSS3 Skill level: 98%"></div>
-                  </div>
-                </div>
-
-                <div class="skill-items">
-                  <div class="skill-info">
-                    <span class="skill-name">Tailwind CSS</span>
-                    <span class="skill-percentage">95%</span>
-                  </div>
-                  <div class="skill-bar progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="Tailwind CSS skill level: 95%"></div>
-                  </div>
-                </div>
-
-                <div class="skill-items">
-                  <div class="skill-info">
-                    <span class="skill-name">Typescript</span>
-                    <span class="skill-percentage">90%</span>
-                  </div>
-                  <div class="skill-bar progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="Typescript skill level: 90%"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
     
-    <section id="my-resume" class="resume section">
-      <div class="container section-title">
-        <h2>My Resume</h2>
-        <p>My Education and Professional Experience</p>
-      </div>
+    <!-- ... Rest of sections (Skills, Resume, Contact) ... -->
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row">
-          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
-            <div class="education-section">
-              <div class="section-header">
-                <h2><i class="bi bi-mortarboard"></i> Education</h2>
-              </div>
-
-              <div class="education-timeline">
-                <div class="timeline-track"></div>
-                <div class="education-item" data-aos="slide-up" data-aos-delay="300">
-                  <div class="timeline-marker"></div>
-                  <div class="education-content">
-                    <div class="degree-header">
-                      <h3>Master of Data Science</h3>
-                      <span class="year">2025 - Present</span>
-                    </div>
-                    <h4 class="institution">University of Port Harcourt</h4>
-                    <p>&ensp;
-                    <strong>Relevant Coursework:</strong> Machine Learning, Statistical Modeling, Software Development, Scalable Systems and Big Data Analytics.<br>&ensp;<strong>Technologies:</strong> Python (Pandas, Scikit-learn, TensorFlow), SQL, Apache Spark.<br>&ensp;
-                    </p>
-                  </div>
-                </div>
-                <div class="education-item" data-aos="slide-up" data-aos-delay="400">
-                  <div class="timeline-marker"></div>
-                  <div class="education-content">
-                    <div class="degree-header">
-                      <h3>Bachelor of Computer Science</h3>
-                      <span class="year">2021 - 2025</span>
-                    </div>
-                    <h4 class="institution">Dennis Osadebay University</h4>
-                    <p>&ensp;
-            <strong>Relevant Coursework:</strong> Logic, Web and Software Development, Theoretical Computer Science, Artificial Intelligence, Database Systems and System Analysis.<br>&ensp;
-            <strong>Technologies:</strong> Python, HTML, MongoDB, PHP, React.<br>&ensp;
-                    </p>
-                  </div>
-                </div>                
-                <div class="education-item" data-aos="slide-up" data-aos-delay="500">
-                    <div class="timeline-marker"></div>
-                    <div class="education-content">
-                        <div class="certifications-card">
-                            <div class="cert-header">
-                                <span class="year">2020 - 2025</span>
-                                <h4>Certificates</h4>
-                            </div>
-                            <h3>Professional Certifications</h3>
-                            <ul class="cert-list">
-                                <li class="cert-item">
-                                    <span>Google for Developers</span>
-                                    <span class="cert-year">2025</span>
-                                </li>
-                                <li class="cert-item">
-                                    <span>React - The Complete Guide 2025 (incl. Next.js, Redux) on Udemy</span>
-                                    <span class="cert-year">2025</span>
-                                </li>
-                                <li class="cert-item">
-                                    <span>Meta Front-End Developer Professional Certificate</span>
-                                    <span class="cert-year">2024</span>
-                                </li>
-                                <li class="cert-item">
-                                    <span>The Complete Node.js Developer Course on Udemy</span>
-                                    <span class="cert-year">2023</span>
-                                </li>
-                                <li class="cert-item">
-                                    <span>The Complete 2020 Web Development Bootcamp on Udemy</span>
-                                    <span class="cert-year">2020</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                 </div>
-               </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
-            <div class="experience-section">
-              <div class="section-header">
-                <h2><i class="bi bi-briefcase"></i> Professional Journey</h2>
-              </div>
-
-              <div class="experience-cards">
-                <div class="experience-card" data-aos="zoom-in" data-aos-delay="400">
-                  <div class="card-header">
-                    <div class="role-info">
-                      <h3>Lead Software Engineer</h3>
-                      <h4>Cashew Technologies</h4>
-                    </div>
-                    <span class="duration">2024 - Present</span>
-                  </div>
-                  <div class="card-body">
-                    <p>Build, style and ship high-quality websites, design systems, mobile apps and digital experiences for a diverse array of projects for clients.</p>
-                  </div>
-                </div>
- 
-                <div class="experience-card" data-aos="zoom-in" data-aos-delay="300">
-                  <div class="card-header">
-                    <div class="role-info">
-                      <h3>Developer</h3>
-                      <h4>Leti Studios</h4>
-                    </div>
-                    <span class="duration">2021 - 2023</span>
-                  </div>
-                  <div class="card-body">
-                    <p>Worked with the dev team to engineer and improve major features of Leti’s learning application.</p>
-                    <!--<ul class="achievements">
-                      <li>Managed cross-functional teams of 15+ professionals</li>
-                      <li>Implemented agile methodologies resulting in 40% efficiency gain</li>
-                      <li>Led digital transformation initiatives worth $2M+</li>
-                    </ul>-->
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <section id="testimonials" class="testimonials section">
-  <div class="container section-title" data-aos="fade-up">
-    <h2>Testimonials</h2>
-    <p>What my clients say about our collaboration</p>
-  </div>
-
-  <div class="testimonials-marquee">
-    <div class="marquee-track track-1">
-      <div class="testimonial-card-v2">
-        <div class="card-accent"></div>
-        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-        <p class="quote">The entire process was seamless. From initial concept to final deployment, the communication and execution were flawless.</p>
-        <div class="author"><div class="author-info"><h3>Emily Hawkins</h3><span><div class="testimonial-location-pin"></div> Virginia Beach, USA</span></div></div>
-      </div>
-      <div class="testimonial-card-v2">
-        <div class="card-accent"></div>
-        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></div>
-        <p class="quote">An incredibly talented developer. The final product was beautiful and user-friendly. Very impressive.</p>
-        <div class="author"><div class="author-info"><h3>Naresh Kumar</h3><span><div class="testimonial-location-pin"></div> Ahmedabad, India</span></div></div>
-      </div>
-      <div class="testimonial-card-v2">
-        <div class="card-accent"></div>
-        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-        <p class="quote">Very fast delivery. I didn't expect the project to be completed so soon. Nice</p>
-        <div class="author"><div class="author-info"><h3>Kamran Khan</h3><span><div class="testimonial-location-pin"></div> Karachi, Pakistan</span></div></div>
-      </div>
-      <div class="testimonial-card-v2">
-        <div class="card-accent"></div>
-        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></div>
-        <p class="quote">It was wonderful working with you. I look forward to working with you on other projects in the future.</p>
-        <div class="author"><div class="author-info"><h3>Millie Clarke</h3><span><div class="testimonial-location-pin"></div> Auckland, New Zealand</span></div></div>
-      </div>
-
-      <!-- Duplicated Set for Animation -->
-      <div class="testimonial-card-v2" aria-hidden="true">
-        <div class="card-accent"></div>
-        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-        <p class="quote">The entire process was seamless. From initial concept to final deployment, the communication and execution were flawless.</p>
-        <div class="author"><div class="author-info"><h3>Emily Hawkins</h3><span><div class="testimonial-location-pin"></div> Virginia Beach, USA</span></div></div>
-      </div>
-      <div class="testimonial-card-v2" aria-hidden="true">
-        <div class="card-accent"></div>
-        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></div>
-        <p class="quote">An incredibly talented developer. The final product was beautiful and user-friendly. Very impressive.</p>
-        <div class="author"><div class="author-info"><h3>Naresh Kumar</h3><span><div class="testimonial-location-pin"></div> Ahmedabad, India</span></div></div>
-      </div>
-      <div class="testimonial-card-v2" aria-hidden="true">
-        <div class="card-accent"></div>
-        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-        <p class="quote">Very fast delivery. I didn't expect the project to be completed so soon. Nice</p>
-        <div class="author"><div class="author-info"><h3>Kamran Khan</h3><span><div class="testimonial-location-pin"></div> Karachi, Pakistan</span></div></div>
-      </div>
-      <div class="testimonial-card-v2" aria-hidden="true">
-        <div class="card-accent"></div>
-        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></div>
-        <p class="quote">It was wonderful working with you. I look forward to working with you on other projects in the future.</p>
-        <div class="author"><div class="author-info"><h3>Millie Clarke</h3><span><div class="testimonial-location-pin"></div> Auckland, New Zealand</span></div></div>
-      </div>
-    </div>
-
-    <div class="marquee-track track-2">
-      <div class="testimonial-card-v2">
-        <div class="card-accent"></div>
-        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-        <p class="quote">I'm thrilled with the results. The app is fast, intuitive and is already receiving amazing feedback from our users.</p>
-        <div class="author"><div class="author-info"><h3>Toby Cooper</h3><span><div class="testimonial-location-pin"></div> Toronto, Canada</span></div></div>
-      </div>
-      <div class="testimonial-card-v2">
-        <div class="card-accent"></div>
-        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-        <p class="quote">Exceeded all expectations. The level of professionalism and skill is unmatched. Highly recommended for any project.</p>
-        <div class="author"><div class="author-info"><h3>David Chen</h3><span><div class="testimonial-location-pin"></div> San Francisco, USA</span></div></div>
-      </div>
-      <div class="testimonial-card-v2">
-        <div class="card-accent"></div>
-        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></div>
-        <p class="quote">Super responsive, communicates clearly and honors commitments. Really great work 👍</p>
-        <div class="author"><div class="author-info"><h3>Charles F.</h3><span><div class="testimonial-location-pin"></div> San Francisco, USA</span></div></div>
-      </div>
-      <div class="testimonial-card-v2">
-        <div class="card-accent"></div>
-        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-        <p class="quote">Your designs are amazing! Wonderful job, man</p>
-        <div class="author"><div class="author-info"><h3>Theo M.</h3><span><div class="testimonial-location-pin"></div> Rouen, France</span></div></div>
-      </div>
-      
-      <!-- Duplicated Set for Animation -->
-      <div class="testimonial-card-v2" aria-hidden="true">
-        <div class="card-accent"></div>
-        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-        <p class="quote">I'm thrilled with the results. The app is fast, intuitive and is already receiving amazing feedback from our users.</p>
-        <div class="author"><div class="author-info"><h3>Toby Cooper</h3><span><div class="testimonial-location-pin"></div> Toronto, Canada</span></div></div>
-      </div>
-      <div class="testimonial-card-v2" aria-hidden="true">
-        <div class="card-accent"></div>
-        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-        <p class="quote">Exceeded all expectations. The level of professionalism and skill is unmatched. Highly recommended for any project.</p>
-        <div class="author"><div class="author-info"><h3>David Chen</h3><span><div class="testimonial-location-pin"></div> San Francisco, USA</span></div></div>
-      </div>
-      <div class="testimonial-card-v2" aria-hidden="true">
-        <div class="card-accent"></div>
-        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></div>
-        <p class="quote">Super responsive, communicates clearly and honors commitments. Really great work 👍</p>
-        <div class="author"><div class="author-info"><h3>Charles F.</h3><span><div class="testimonial-location-pin"></div> San Francisco, USA</span></div></div>
-      </div>
-      <div class="testimonial-card-v2" aria-hidden="true">
-        <div class="card-accent"></div>
-        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-        <p class="quote">Your designs are amazing! Wonderful job man</p>
-        <div class="author"><div class="author-info"><h3>Theo M.</h3><span><div class="testimonial-location-pin"></div> Rouen, France</span></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-    <section id="contact" class="contact section">
-  <div class="container section-title" data-aos="fade-up">
-    <h2>Contact</h2>
-    <p>To discuss a project, you can reach out to me!</p>
-  </div>
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
-    <div class="row justify-content-center justify-content-lg-start">
-      <div class="col-lg-8 col-xl-7">
-        <div class="contact-form-new">
-          <form class="form" id="contact-form" novalidate>
-            <input type="hidden" name="access_key" value="b3b5a954-eab8-442d-9596-979384027138">
-            <input type="hidden" name="subject" value="New Contact Form Submission from Portfolio">
-            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-            <div class="input_container">
-              <label for="name_field" class="input_label">Full Name</label>
-              <input id="name_field" class="input_field" type="text" name="name" placeholder="Enter your full name">
-              <span class="error-text" id="name-error"></span>
-            </div>
-            <div class="input_container">
-              <label for="email_field" class="input_label">Email</label>
-              <input id="email_field" class="input_field" type="email" name="email" placeholder="Enter your email address">
-              <span class="error-text" id="email-error"></span>
-            </div>
-
-            <div class="input_container">
-              <label for="subject_field" class="input_label">Subject</label>
-              <input id="subject_field" class="input_field" type="text" name="form_subject" placeholder="What is this about?">
-              <span class="error-text" id="subject-error"></span>
-            </div>
-
-            <div class="input_container">
-              <label for="message_field" class="input_label">Message</label>
-              <textarea id="message_field" class="input_field" name="message" rows="4" placeholder="Your message here..."></textarea>
-              <span class="error-text" id="message-error"></span>
-            </div>
-
-            <button type="submit" class="purchase--btn">
-  <span class="button-text">Send Message</span>
-  
-  <div class="button-loader-sending" style="display: none;">
-    <span>&lt;</span>
-    <span>SENDING</span>
-    <span>/&gt;</span>
-  </div>
-
-  <div class="button-loader-mail" style="display: none;">
-    <div class="mail-container">
-      <div class="mail-trail">
-        <span></span><span></span><span></span>
-      </div>
-      <svg class="mail-svg" viewBox="0 0 16 16">
-        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
-      </svg>
-    </div>
-  </div>
-</button>
-          </form>
-        </div>
-        <div class="alert-container" id="alert-container"></div>
-      </div>
-    </div>
-  </div>
-</section>
   </main>
 
   <footer id="footer" class="footer">
     <div class="container">
       <div class="copyright text-center ">
-        <p><span>Loosely designed in Figma and coded in Visual Studio Code by yours truly. Built with HTML5, CSS3 and JavaScript, deployed with GitHub.</span></p>
+        <p><span>Loosely designed in Figma and coded in Visual Studio Code.</span></p>
       </div>
     </div>
   </footer>
 
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+  <!-- PEPPLE PRELOADER -->
   <div id="preloader">
     <div class="loader-container">
       <svg height="0" width="0" viewBox="0 0 64 64" class="absolute">
         <defs xmlns="http://www.w3.org/2000/svg">
-          <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="g1"><stop stop-color="#10B981"></stop><stop stop-color="#059669" offset="1"></stop></linearGradient>
-          <linearGradient gradientUnits="userSpaceOnUse" y2="0" x2="0" y1="64" x1="0" id="g2"><stop stop-color="#34D399"></stop><stop stop-color="#10B981" offset="1"></stop><animateTransform repeatCount="indefinite" keySplines=".42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1" keyTimes="0; 0.125; 0.25; 0.375; 0.5; 0.625; 0.75; 0.875; 1" dur="32s" values="0 32 32;-270 32 32;-270 32 32;-540 32 32;-540 32 32;-810 32 32;-810 32 32;-1080 32 32;-1080 32 32" type="rotate" attributeName="gradientTransform"></animateTransform></linearGradient>
-          <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="g3"><stop stop-color="#059669"></stop><stop stop-color="#047857" offset="1"></stop></linearGradient>
-          <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="g4"><stop stop-color="#22C55E"></stop><stop stop-color="#16A34A" offset="1"></stop></linearGradient>
-          <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="g5"><stop stop-color="#4ADE80"></stop><stop stop-color="#22C55E" offset="1"></stop></linearGradient>
-          <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="g6"><stop stop-color="#10B981"></stop><stop stop-color="#059669" offset="1"></stop></linearGradient>
-          <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="g7"><stop stop-color="#34D399"></stop><stop stop-color="#10B981" offset="1"></stop></linearGradient>
-          <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="g8"><stop stop-color="#6EE7B7"></stop><stop stop-color="#34D399" offset="1"></stop></linearGradient>
-          <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="g1o"><stop stop-color="#6EE7B7" stop-opacity="0.4"></stop><stop stop-color="#34D399" stop-opacity="0.4" offset="1"></stop></linearGradient>
-          <linearGradient gradientUnits="userSpaceOnUse" y2="0" x2="0" y1="64" x1="0" id="g2o"><stop stop-color="#A7F3D0" stop-opacity="0.4"></stop><stop stop-color="#6EE7B7" stop-opacity="0.4" offset="1"></stop><animateTransform repeatCount="indefinite" keySplines=".42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1" keyTimes="0; 0.125; 0.25; 0.375; 0.5; 0.625; 0.75; 0.875; 1" dur="20s" values="0 32 32;-270 32 32;-270 32 32;-540 32 32;-540 32 32;-810 32 32;-810 32 32;-1080 32 32;-1080 32 32" type="rotate" attributeName="gradientTransform"></animateTransform></linearGradient>
-          <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="g3o"><stop stop-color="#34D399" stop-opacity="0.4"></stop><stop stop-color="#10B981" stop-opacity="0.4" offset="1"></stop></linearGradient>
-          <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="g4o"><stop stop-color="#6EE7B7" stop-opacity="0.4"></stop><stop stop-color="#4ADE80" stop-opacity="0.4" offset="1"></stop></linearGradient>
-          <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="g5o"><stop stop-color="#A7F3D0" stop-opacity="0.4"></stop><stop stop-color="#6EE7B7" stop-opacity="0.4" offset="1"></stop></linearGradient>
-          <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="g6o"><stop stop-color="#6EE7B7" stop-opacity="0.4"></stop><stop stop-color="#34D399" stop-opacity="0.4" offset="1"></stop></linearGradient>
-          <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="g7o"><stop stop-color="#A7F3D0" stop-opacity="0.4"></stop><stop stop-color="#6EE7B7" stop-opacity="0.4" offset="1"></stop></linearGradient>
-          <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="g8o"><stop stop-color="#D1FAE5" stop-opacity="0.4"></stop><stop stop-color="#A7F3D0" stop-opacity="0.4" offset="1"></stop></linearGradient>
+          <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="g1"><stop stop-color="#22C55E"></stop><stop stop-color="#16A34A" offset="1"></stop></linearGradient>
+          <linearGradient gradientUnits="userSpaceOnUse" y2="0" x2="0" y1="64" x1="0" id="g2"><stop stop-color="#4ADE80"></stop><stop stop-color="#22C55E" offset="1"></stop><animateTransform repeatCount="indefinite" keySplines=".42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1" keyTimes="0; 0.125; 0.25; 0.375; 0.5; 0.625; 0.75; 0.875; 1" dur="32s" values="0 32 32;-270 32 32;-270 32 32;-540 32 32;-540 32 32;-810 32 32;-810 32 32;-1080 32 32;-1080 32 32" type="rotate" attributeName="gradientTransform"></animateTransform></linearGradient>
+          <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="g3"><stop stop-color="#16A34A"></stop><stop stop-color="#15803D" offset="1"></stop></linearGradient>
+          <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="g4"><stop stop-color="#34D399"></stop><stop stop-color="#10B981" offset="1"></stop></linearGradient>
+          <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="g5"><stop stop-color="#6EE7B7"></stop><stop stop-color="#34D399" offset="1"></stop></linearGradient>
+          <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="g6"><stop stop-color="#22C55E"></stop><stop stop-color="#16A34A" offset="1"></stop></linearGradient>
+          <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="g1o"><stop stop-color="#86EFAC" stop-opacity="0.6"></stop><stop stop-color="#4ADE80" stop-opacity="0.6" offset="1"></stop></linearGradient>
+          <linearGradient gradientUnits="userSpaceOnUse" y2="0" x2="0" y1="64" x1="0" id="g2o"><stop stop-color="#BBF7D0" stop-opacity="0.6"></stop><stop stop-color="#86EFAC" stop-opacity="0.6" offset="1"></stop><animateTransform repeatCount="indefinite" keySplines=".42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1" keyTimes="0; 0.125; 0.25; 0.375; 0.5; 0.625; 0.75; 0.875; 1" dur="20s" values="0 32 32;-270 32 32;-270 32 32;-540 32 32;-540 32 32;-810 32 32;-810 32 32;-1080 32 32;-1080 32 32" type="rotate" attributeName="gradientTransform"></animateTransform></linearGradient>
+          <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="g3o"><stop stop-color="#4ADE80" stop-opacity="0.6"></stop><stop stop-color="#22C55E" stop-opacity="0.6" offset="1"></stop></linearGradient>
+          <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="g4o"><stop stop-color="#86EFAC" stop-opacity="0.6"></stop><stop stop-color="#6EE7B7" stop-opacity="0.6" offset="1"></stop></linearGradient>
+          <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="g5o"><stop stop-color="#BBF7D0" stop-opacity="0.6"></stop><stop stop-color="#86EFAC" stop-opacity="0.6" offset="1"></stop></linearGradient>
+          <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="g6o"><stop stop-color="#86EFAC" stop-opacity="0.6"></stop><stop stop-color="#4ADE80" stop-opacity="0.6" offset="1"></stop></linearGradient>
         </defs>
       </svg>
-      <div class="loader outline"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block"><path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#g1o)" d="M 8,60 V 4 L 56,60 V 4" class="dash" pathLength="360"></path></svg><div class="w-2"></div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block"><path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#g4o)" d="M 56,4 H 8 V 60 H 56 M 8,32 H 48" class="dash" pathLength="360"></path></svg><div class="w-2"></div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block"><path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#g3o)" d="M 32,4 V 60 M 16,4 H 48 M 16,60 H 48" class="dash" pathLength="360"></path></svg><div class="w-2"></div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block"><path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#g5o)" d="M 8,60 V 4 M 8,32 L 56,4 M 8,32 L 56,60" class="dash" pathLength="360"></path></svg><div class="w-2"></div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block"><path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#g6o)" d="M 56,4 H 8 V 60 H 56 M 8,32 H 48" class="dash" pathLength="360"></path></svg><div class="w-2"></div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block"><path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#g7o)" d="M 4,4 H 60 M 32,4 V 60" class="dash" pathLength="360"></path></svg><div class="w-2"></div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block"><path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#g8o)" d="M 32,4 V 60 M 16,4 H 48 M 16,60 H 48" class="dash" pathLength="360"></path></svg><div class="w-2"></div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block"><path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#g1o)" d="M 56,4 H 8 V 60 H 56 M 8,32 H 48" class="dash" pathLength="360"></path></svg><div class="w-2"></div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block"><path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#g2o)" d="M 8,60 V 4 L 56,60 V 4" class="dash" pathLength="360"></path></svg></div>
-      <div class="loader fill"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block"><path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#g1)" d="M 8,60 V 4 L 56,60 V 4" class="dash" pathLength="360"></path></svg><div class="w-2"></div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block"><path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#g4)" d="M 56,4 H 8 V 60 H 56 M 8,32 H 48" class="dash" pathLength="360"></path></svg><div class="w-2"></div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block"><path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#g3)" d="M 32,4 V 60 M 16,4 H 48 M 16,60 H 48" class="dash" pathLength="360"></path></svg><div class="w-2"></div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block"><path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#g5)" d="M 8,60 V 4 M 8,32 L 56,4 M 8,32 L 56,60" class="dash" pathLength="360"></path></svg><div class="w-2"></div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block"><path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#g6)" d="M 56,4 H 8 V 60 H 56 M 8,32 H 48" class="dash" pathLength="360"></path></svg><div class="w-2"></div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block"><path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#g7)" d="M 4,4 H 60 M 32,4 V 60" class="dash" pathLength="360"></path></svg><div class="w-2"></div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block"><path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#g8)" d="M 32,4 V 60 M 16,4 H 48 M 16,60 H 48" class="dash" pathLength="360"></path></svg><div class="w-2"></div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block"><path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#g1)" d="M 56,4 H 8 V 60 H 56 M 8,32 H 48" class="dash" pathLength="360"></path></svg><div class="w-2"></div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block"><path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#g2)" d="M 8,60 V 4 L 56,60 V 4" class="dash" pathLength="360"></path></svg></div>
+      <div class="loader outline">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block"><path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#g1o)" d="M 8,60 V 4 H 40 Q 56,4 56,20 Q 56,36 40,36 H 8" class="dash" pathLength="360"></path></svg><div class="w-2"></div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block"><path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#g2o)" d="M 56,4 H 8 V 60 H 56 M 8,32 H 48" class="dash" pathLength="360"></path></svg><div class="w-2"></div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block"><path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#g3o)" d="M 8,60 V 4 H 40 Q 56,4 56,20 Q 56,36 40,36 H 8" class="dash" pathLength="360"></path></svg><div class="w-2"></div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block"><path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#g4o)" d="M 8,60 V 4 H 40 Q 56,4 56,20 Q 56,36 40,36 H 8" class="dash" pathLength="360"></path></svg><div class="w-2"></div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block"><path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#g5o)" d="M 8,4 V 60 H 56" class="dash" pathLength="360"></path></svg><div class="w-2"></div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block"><path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#g6o)" d="M 56,4 H 8 V 60 H 56 M 8,32 H 48" class="dash" pathLength="360"></path></svg>
+      </div>
+      <div class="loader fill">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block"><path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#g1)" d="M 8,60 V 4 H 40 Q 56,4 56,20 Q 56,36 40,36 H 8" class="dash" pathLength="360"></path></svg><div class="w-2"></div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block"><path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#g2)" d="M 56,4 H 8 V 60 H 56 M 8,32 H 48" class="dash" pathLength="360"></path></svg><div class="w-2"></div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block"><path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#g3)" d="M 8,60 V 4 H 40 Q 56,4 56,20 Q 56,36 40,36 H 8" class="dash" pathLength="360"></path></svg><div class="w-2"></div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block"><path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#g4)" d="M 8,60 V 4 H 40 Q 56,4 56,20 Q 56,36 40,36 H 8" class="dash" pathLength="360"></path></svg><div class="w-2"></div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block"><path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#g5)" d="M 8,4 V 60 H 56" class="dash" pathLength="360"></path></svg><div class="w-2"></div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block"><path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#g6)" d="M 56,4 H 8 V 60 H 56 M 8,32 H 48" class="dash" pathLength="360"></path></svg>
+      </div>
     </div>
   </div>
 
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
-  <script src="assets/vendor/aos/aos.js" defer></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js" defer></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
-  <script src="assets/vendor/typed.js/typed.umd.js" defer></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js" defer></script>
-  <script src="assets/js/script.js" defer></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/js/script.js"></script>
+
 </body>
 </html>
