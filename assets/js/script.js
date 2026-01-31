@@ -69,13 +69,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Add this new Typed instance for the logo
   new Typed('#animated-logo-text', {
-    strings: ['Nightshade', 'Michael Neiketien'],
-    typeSpeed: 80,   // Speed of typing
-    backSpeed: 70,   // Speed of deleting
-    backDelay: 2000, // Pause for 3 seconds after typing is complete
-    startDelay: 100, // Small delay before the animation starts
+    strings: ['Michael Pepple', 'Misha Pepple'],
+    typeSpeed: 160,   // Speed of typing
+    backSpeed: 90,   // Speed of deleting
+    backDelay: 4000, // Pause for 3 seconds after typing is complete
+    startDelay: 170, // Small delay before the animation starts
     loop: true,      // Loop the animation indefinitely
-    showCursor: false // Display the blinking cursor
+    showCursor: true, // Display the blinking cursor
+    cursorChar: '_', // Block cursor for terminal effect
+    autoInsertCss: true
   });
 
 });
@@ -123,19 +125,34 @@ document.addEventListener('DOMContentLoaded', () => {
   })();
 
   /**
-   * Preloader
-   */
-  const preloader = document.querySelector('#preloader');
-  if (preloader) {
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        preloader.classList.add('loaded');
-      }, 3000); // Let the animation play for 3 seconds
-      setTimeout(() => {
-        preloader.remove();
-      }, 3500); // Remove it after the 0.5s fade-out animation
+ * Preloader
+ */
+const preloader = document.querySelector('#preloader');
+if (preloader) {
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      preloader.classList.add('loaded');
+      // Trigger social icons animation after preloader finishes
+      triggerSocialIconsAnimation();
+    }, 3000); // Let the animation play for 3 seconds
+    setTimeout(() => {
+      preloader.remove();
+    }, 3500); // Remove it after the 0.5s fade-out animation
+  });
+}
+
+/**
+ * Trigger Social Icons Staggered Animation
+ */
+function triggerSocialIconsAnimation() {
+  const socialLinks = document.querySelectorAll('.hero-socials .social-link');
+  if (socialLinks.length > 0) {
+    // Add 'animate' class to trigger the animations
+    socialLinks.forEach(link => {
+      link.classList.add('animate');
     });
   }
+}
   
   /**
    * Init typed.js
