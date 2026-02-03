@@ -13,6 +13,15 @@
   --nav-font: "Inter", sans-serif;
 }
 
+@font-face {
+    font-family: 'Kostic Serif Bold';
+    src: url('../fonts/Kostic Serif W00 Bold.woff2') format('woff2'),
+         url('../fonts/Kostic Serif W00 Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root {
   --background-color: #ffffff;
@@ -169,18 +178,54 @@ h6 {
   100% { transform: translate(50px, 50px) scale(1.1); }
 }
 
+.main {
+  position: relative;
+  z-index: 2; /* Higher z-index to slide over hero */
+  background-color: var(--background-color); /* Ensure it's opaque white */
+  
+  /* Add a shadow to the top of the white content for depth */
+  box-shadow: 0 -20px 50px rgba(0,0,0,0.5); 
+}
+
+/* 3. Add a "Bridge" Section (Optional but recommended) */
+/* This adds a gradient fade at the top of the white section
+.main::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top, #ffffff, transparent);
+  pointer-events: none;
+}*/
+
 /* 3. Cinematic Hero Section */
 .hero-cinematic {
   min-height: 100vh; 
   width: 100%;
   height: auto;
-  position: relative; 
+  position: relative;
+  top: 0;
+  z-index: 1;
   overflow: hidden; 
   padding: 120px 0 80px 0;
   display: flex; 
   align-items: center;
   background-color: #050505 !important;
 }
+
+/*.hero-cinematic::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(to bottom, transparent 0%, var(--background-color) 100%);
+  z-index: 2;
+  pointer-events: none;
+}*/
 
 /* 4. Hero Typography (Left Side) */
 .hero-text-content {
@@ -189,53 +234,39 @@ h6 {
 }
 
 .hero-name {
-  font-family: 'Inter', sans-serif;
-  font-size: 5rem;
+  font-family: 'Kostic Serif Bold', 'Cardo', serif;
+  font-size: 5.5rem;
   font-weight: 800;
-  line-height: 1.15;
+  letter-spacing: -1px;
+  line-height: 1;
   color: #ffffff;
   margin-bottom: 20px;
+  overflow: hidden;
 }
 
 .hero-name span {
   /*font-size: 3.7rem;
   font-weight: 800;*/
+  display: inline-block; /* Needed to animate transforms */
+  transform: translateY(100%);
   letter-spacing: 1px;
   /*color: transparent;
   -webkit-text-stroke: 1px #ffffff;
   opacity: 0.9;*/
 }
 
-.hero-name .square-dot {
-  display: inline-block;
-  position: relative;
-  color: transparent; /* Hides the original round text character */
-}
-
-.hero-name .square-dot::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  /* Adjusts the vertical position to sit on the baseline */
-  bottom: 0.16em; 
-  /* Sets the size relative to the font */
-  width: 0.18em;  
-  height: 0.18em; 
-  /* The color of the square */
-  background-color: #ffffff; 
+.hero-active .hero-name span {
+  animation: textReveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s forwards;
 }
 
 .role-wrapper {
   display: flex;
   align-items: center;
+  transform: translateY(20px);
 }
 
-/* The Vertical Line from Screenshot */
-.vertical-line {
-  width: 4px;
-  height: 50px;
-  background-color: #ffffff;
-  margin-right: 20px;
+.hero-active .role-wrapper {
+  animation: textReveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s forwards;
 }
 
 .role-text {
@@ -258,6 +289,33 @@ h6 {
     display: flex;
     gap: 20px;
 }
+
+.hero-active .hero-cta {
+  animation: softDrop 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.6s forwards;
+}
+
+.hero-active .hero-socials {
+  opacity: 1; 
+  transition: opacity 0.5s ease 0.8s; /* Simple fade in for the container */
+}
+/* Triggers the specific slide-in keyframes for icons defined previously */
+.hero-active .social-link.facebook i { animation: enterFromBottom 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.8s forwards; }
+.hero-active .social-link.twitter i { animation: enterFromTop 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 1.0s forwards; }
+.hero-active .social-link.linkedin i { animation: enterFromBottom 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 1.2s forwards; }
+.hero-active .social-link.github i { animation: enterFromTop 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 1.4s forwards; }
+
+
+/* --- KEYFRAMES --- */
+@keyframes textReveal {
+  0% { transform: translateY(100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes softDrop {
+  0% { transform: translateY(-20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
 
 .btn-outlined {
   border: 1px solid #888888;
@@ -506,6 +564,26 @@ h6 {
   margin-right: 15px;
 }
 
+@keyframes textReveal {
+  0% { transform: translateY(100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* The "Soft Drop" for the Badge */
+@keyframes softDrop {
+  0% { transform: translateY(-20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.status-badge,
+.hero-name span, /* The text lines */
+.role-wrapper,
+.hero-cta,
+.hero-socials {
+  opacity: 0; /* Hidden by default */
+  /* No animation property here! */
+}
+
 .status-badge {
   display: inline-flex;
   align-items: center;
@@ -520,6 +598,10 @@ h6 {
   color: rgba(255, 255, 255, 0.8);
   letter-spacing: 0.5px;
   width: fit-content;
+}
+
+.hero-active .status-badge {
+  animation: softDrop 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 .pulse-dot {
@@ -998,27 +1080,66 @@ body.scrolled .navmenu .active {
   right: 15px;
   bottom: -15px;
   z-index: 99999;
-  background-color: var(--accent-color);
+  background-color: #ffffff;
   width: 44px;
   height: 44px;
   border-radius: 50px;
   transition: all 0.4s;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0);
 }
 
 .scroll-top i {
   font-size: 24px;
   color: var(--default-color);
   line-height: 0;
+  z-index: 2;
 }
 
 .scroll-top:hover {
   background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
+.scroll-top .progress-circle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  fill: none;
+  stroke: var(--accent-color); /* Green Border */
+  stroke-width: 2px; /* 1px visual width + anti-aliasing */
+  
+  /* Animation Setup */
+  stroke-dasharray: 308; /* Circumference of circle */
+  stroke-dashoffset: 308; /* Hidden initially */
+  transition: stroke-dashoffset 0.6s ease-out;
+  transform: rotate(-90deg); /* Start drawing from top */
+  transform-origin: center;
+}
+
 .scroll-top.active {
   visibility: visible;
   opacity: 1;
   bottom: 15px;
+  transform: scale(1);
+}
+
+.scroll-top.active .progress-circle {
+  stroke-dashoffset: 0; /* Draw full circle */
+  transition-delay: 0.2s; /* Wait for button to pop in before drawing */
+}
+
+/* Hover Effect */
+.scroll-top:hover {
+  background-color: var(--accent-color);
+  box-shadow: 0 5px 15px rgba(39, 167, 118, 0.4);
+}
+.scroll-top:hover i {
+  color: #ffffff; /* Arrow turns white on hover */
+}
+.scroll-top:hover .progress-circle {
+  stroke: #ffffff; /* Border turns white */
 }
 
 /*--------------------------------------------------------------
@@ -1995,7 +2116,7 @@ section,
 }
 
 .skills-grid .skill-item {
-  transition: transform 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .skills-grid .skill-item i {
@@ -2014,7 +2135,37 @@ section,
 }
 
 .skills-grid .skill-item:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px) scale(1.05); /* Pop effect */
+}
+
+/* Make the custom TS icon behave exactly like FontAwesome */
+.custom-icon-ts {
+  display: inline-block;
+  font-size: 48px; /* Forces it to match the other icons' size */
+  height: 1em;
+  width: 1em;
+  line-height: 1;
+  
+  /* THIS IS THE FIX: Lowers the icon to the correct baseline */
+  vertical-align: -0.125em; 
+  
+  /* Reset any margins that might be pushing it */
+  margin: 0; 
+  padding: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.custom-icon-ts svg {
+  width: 1em;  /* Inherits 48px from parent */
+  height: 1em; /* Inherits 48px from parent */
+  fill: currentColor; /* Inherits the grey color */
+  display: block; /* Removes extra space below SVG */
+}
+
+/* Ensure hover effects work on this new icon */
+.skills-grid .skill-item:hover .custom-icon-ts {
+  color: var(--accent-color);
+  transform: translateY(-5px); /* Matches your existing hover effect */
 }
 
 .skills-grid .skill-item:hover,
