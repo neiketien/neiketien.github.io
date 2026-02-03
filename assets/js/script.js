@@ -137,6 +137,7 @@ if (preloader) {
     }, 3000); // Let the animation play for 3 seconds
     setTimeout(() => {
       preloader.remove();
+      document.body.classList.add('hero-active');
     }, 3500); // Remove it after the 0.5s fade-out animation
   });
 }
@@ -170,7 +171,6 @@ function triggerSocialIconsAnimation() {
     });
   }
   
-  
   /**
    * Scroll top button
    */
@@ -178,9 +178,17 @@ function triggerSocialIconsAnimation() {
 
   function toggleScrollTop() {
     if (scrollTop) {
-      window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
+      if (window.scrollY > 100) {
+        // Trigger Animation: Pop in + Draw Circle
+        scrollTop.classList.add('active');
+      } else {
+        // Reverse Animation: Undraw + Scale out
+        scrollTop.classList.remove('active');
+      }
     }
   }
+  
+  // Keep your existing listener
   scrollTop.addEventListener('click', (e) => {
     e.preventDefault();
     window.scrollTo({
@@ -188,6 +196,7 @@ function triggerSocialIconsAnimation() {
       behavior: 'smooth'
     });
   });
+ 
   
   /**
    * Animate the skills items on reveal
